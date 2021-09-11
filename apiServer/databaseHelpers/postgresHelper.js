@@ -21,5 +21,6 @@ const getIds = (id) => {
 };
 
 module.exports= {
-  getIds
+  getIds,
+  pool
 };
