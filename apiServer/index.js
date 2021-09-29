@@ -9,10 +9,10 @@ app.listen(PORT, () => { console.log(`API server now listening on port ${PORT}..
 app.use(getParser);
 
 app.get('/', (req, res) => {
-  console.log('body recieved: ', JSON.stringify(req.body));
+  // console.log('body recieved: ', JSON.stringify(req.body));
   db.getIds(req.body.productId)
-    .then((relatedIds) => {
-      res.send(relatedIds);
+    .then((result) => {
+      res.send(result.rows[0].relatedids);
     })
     .catch(() => {
       res.status(500).end();
