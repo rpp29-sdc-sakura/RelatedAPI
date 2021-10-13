@@ -2,3 +2,5 @@ package-lock.json
 node_modules
 etl/data
 coverage
+.DS_Store
+etl/.DS_Store

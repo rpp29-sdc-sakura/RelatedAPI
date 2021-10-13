@@ -14,11 +14,11 @@ app.get('/', (req, res) => {
   // console.log('body recieved: ', JSON.stringify(req.body));
   db.getIds(req.body.productId)
     .then((result) => {
-      let returnValue = result.rows[0].relatedids;
-      console.log();
-      res.status(200).send(returnValue);
+      console.log('retrieval successful');
+      res.status(200).send(result.rows[0].relatedids);
     })
-    .catch(() => {
+    .catch((err) => {
+      console.log('retrieval failed\n', err)
       res.status(500).end();
     });
 });
