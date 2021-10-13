@@ -2,9 +2,11 @@ const Promise = require('bluebird');
 const { Client, Pool } = require('pg');
 
 const pool = new Pool({
+  host: 'ec2-54-146-195-234.compute-1.amazonaws.com',
+  user: 'postgres',
   database: 'loom_related',
   port: 5432,
-  max: 450
+  max: 1500
 });
 pool.queryAsync = Promise.promisify(pool.query);
 
